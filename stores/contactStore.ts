@@ -18,19 +18,26 @@ export const useContactStore = defineStore('useContactStore', {
     actions: {
         async requestContact(
             primary: string,
-            phone: string,
-            language: number
+            password: string,
+            language_id: number
         ) {
             this.loading = true
             try {
                 const body = {
                     primary,
-                    phone,
-                    language
+                    password,
+                    language_id
                 }
                 const response = await apiManager(aURL, body, null, 'POST')
                 this.data = response.data
-                console.log(aURL)
+                console.log(response.data)
+                if (!response) {
+                    return '登入失敗'
+                }else{
+                    const token = useCookie('token')
+                    token.value = response?.data?.token
+                    navigateTo('/whoami')
+                }
             } catch (error: any) {
                 this.error = error
             } finally {
