@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
-import { apiManager } from '~/composables/useFetchManage'
+import { apiManager } from '~/composables/useFetchManageSecret'
 import { ResponseObject } from '~/interface/interface'
 
 // about interface
 export interface about {
-    Authorization:  String
+    data:  String
 }
 
 export interface Response {
@@ -13,12 +13,12 @@ export interface Response {
     error: any | null
 }
 
-const aURL: string = 'auth/users/login'
+const aURL: string = '/me'
 
-export const useAboutStore = defineStore('useAboutStore', {
+export const useAboutMeStore = defineStore('useAboutMeStore', {
     state: (): Response => {
         return {
-            data: {},
+            data: null,
             loading: false,
             error: null,
         }

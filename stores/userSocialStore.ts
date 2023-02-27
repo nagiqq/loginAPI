@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { apiManager } from '~/composables/useFetchManage'
+import { apiManage } from '~/composables/useFetchManageSecret'
 
 const aURL: string = 'auth/users/socialite'
 export interface Response {
@@ -26,7 +26,7 @@ export const useUserSocialStore = defineStore('useUserSocialStore', {
                     access_token,
                     provider
                 }
-                const response = await apiManager(aURL, body, null, 'POST')
+                const response = await apiManage(aURL, body, null, 'POST')
                 this.data = response.data
                 console.log(response.data)
                 if (!response) {

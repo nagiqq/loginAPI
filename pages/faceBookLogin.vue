@@ -33,6 +33,7 @@ function submitLogin(e) {
   console.log(userInfo)
   if (!userInfo) {
     return '登入失敗'
+    alert('失敗')
   }else{
     const token = useCookie('token')
     token.value = getData.token

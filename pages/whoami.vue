@@ -11,9 +11,9 @@
       <button
           type="button"
           class="mt-2 w-fit rounded-sm bg-emerald-500 py-2 px-4 text-sm text-white hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
-          @click="whoami"
+          @click="requestAbouts"
       >
-        打 /api/whoami API
+        顯示當前使用者的狀態，通常在使用者刷先頁面的時候去敲的
       </button>
       <button
           type="button"
@@ -24,27 +24,28 @@
       </button>
     </div>
 
-    <div v-if="userInfo" class="mt-8 flex w-full max-w-md flex-col">
-      <div v-for="key in Object.keys(userInfo)" :key="key" class="mt-1 flex flex-wrap break-all">
-        <label class="text-lg font-semibold text-emerald-500"> {{ key }}:</label>
-        <span class="ml-2 flex flex-1 text-lg text-slate-700">{{ userInfo[key] }}</span>
-      </div>
+    <div v-if="getData" class="mt-8 flex w-full max-w-md flex-col">
+      取得資料
     </div>
   </div>
 </template>
 
 <script setup>
+import {useAboutMeStore} from "~/stores/aboutMeStore";
+import {storeToRefs} from "pinia";
+
 definePageMeta({
   middleware: 'auth'
 })
-const userInfo = useCookie('token', { maxAge: 60 })
+const userInfo = useCookie('token', {maxAge: 60})
 
-const whoami = () => {
-  useFetch('/api/whoami').then((response) => {
-    userInfo.value = response.data.value
-  })
-}
-function logout(){
+function logout() {
   userInfo.value = null
 }
+
+const store = useAboutMeStore()
+const {getData} = storeToRefs(store)
+const {requestAbouts} = store
+
+
 </script>

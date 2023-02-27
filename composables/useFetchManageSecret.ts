@@ -1,4 +1,4 @@
-export const apiManager = async (
+export const apiManage = async (
     url: string,
     body: any | null,
     query: any | null,
@@ -18,8 +18,8 @@ export const apiManager = async (
             "Content-Type": "application/json",
             "Content-Language": "1",
             "Time-Zone": "Asia/Taipei",
-     'Secret": SEsrZzRiTHlKS0thd0doMGJXWE9tSjE3UXl5dzJMYnZSVUc4MVZTc2lHST0=',
- 'Is-Debug": SEsrZzRiTHlKS0thd0doMGJXWE9tSjE3UXl5dzJMYnZSVUc4MVZTc2lHST0=',
+     "Secret": "SEsrZzRiTHlKS0thd0doMGJXWE9tSjE3UXl5dzJMYnZSVUc4MVZTc2lHST0=",
+ "Is-Debug": "SEsrZzRiTHlKS0thd0doMGJXWE9tSjE3UXl5dzJMYnZSVUc4MVZTc2lHST0="
         },
         async onRequest({ request, options }) {
             // Log request
