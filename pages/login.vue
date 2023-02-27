@@ -43,16 +43,10 @@ function submitLogin(e) {
   }else{
     const token = useCookie('token')
     token.value = getData.token
-    // navigateTo('/whoami')
+    navigateTo('/whoami')
   }
-  // console.log(e)
 }
-// definePageMeta({
-//   middleware: 'logged-in-redirect',
-//   pageTransition: {
-//     name: 'rotate'
-//   }
-// })
+
 
 
 </script>

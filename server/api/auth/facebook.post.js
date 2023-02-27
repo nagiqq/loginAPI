@@ -10,12 +10,14 @@ export default defineEventHandler(async (event) => {
 
     const userInfo = await oauth2Client
         .request({
-            url: 'https://www.googleapis.com/oauth2/v3/userinfo'
+            url: 'https://www.facebook.com/v11.0/dialog/oauth '
         })
         .then((response) => response.data)
         .catch(() => null)
 
     oauth2Client.revokeCredentials()
+
+
 
     if (!userInfo) {
         throw createError({
