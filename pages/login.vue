@@ -15,15 +15,15 @@
 
 <script lang="ts" setup>
 import {storeToRefs} from "pinia"
-import {useContactStore} from "~/stores/contactStore"
+import {useUserStore} from "~/stores/userStore"
 
 const primary = ref("tasb00429+2@gmail.com")
 const phone = ref("tasb00429+2")
-const store = useContactStore()
+const store = useUserStore()
 const {getData} = storeToRefs(store)
 
 function submitLogin(e) {
-  const {requestContact} = useContactStore()
+  const {requestContact} = useUserStore()
   // requestContact(
   //     primary.value,
   //     phone.value,
@@ -47,8 +47,12 @@ function submitLogin(e) {
   }
   // console.log(e)
 }
-// const token = useCookie('token')
-// token.value = getData.token
+// definePageMeta({
+//   middleware: 'logged-in-redirect',
+//   pageTransition: {
+//     name: 'rotate'
+//   }
+// })
 
 
 </script>

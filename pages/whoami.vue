@@ -34,7 +34,10 @@
 </template>
 
 <script setup>
-const userInfo = ref()
+definePageMeta({
+  middleware: 'auth'
+})
+const userInfo = useCookie('token', { maxAge: 60 })
 
 const whoami = () => {
   useFetch('/api/whoami').then((response) => {
@@ -42,6 +45,6 @@ const whoami = () => {
   })
 }
 function logout(){
-
+  userInfo.value = null
 }
 </script>

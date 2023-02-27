@@ -42,6 +42,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: 'auth'
+})
+
 const name = useCookie('name')
 const counter = useCookie('counter', { maxAge: 60 })
 

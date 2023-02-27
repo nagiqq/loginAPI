@@ -7,7 +7,7 @@ export interface Response {
     loadingFilter: boolean
     error: any | null
 }
-export const useContactStore = defineStore('useContactStore', {
+export const useUserStore = defineStore('useUserStore', {
     state: (): Response => {
         return {
             data: null,
