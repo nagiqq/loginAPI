@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { apiManager } from '~/composables/useFetchManageSecret'
+import { apiManage } from '~/composables/useFetchManageSecret'
 import { ResponseObject } from '~/interface/interface'
 
 // about interface
@@ -27,7 +27,7 @@ export const useAboutMeStore = defineStore('useAboutMeStore', {
         requestAbouts: async function (): Promise<about> {
             this.loading = true
             try {
-                const response: ResponseObject<about> = await apiManager(aURL)
+                const response: ResponseObject<about> = await apiManage(aURL)
                 this.data = response.data
             } catch (error: any) {
                 this.error = error

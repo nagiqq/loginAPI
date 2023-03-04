@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { apiManager } from '~/composables/useFetchManage'
 
-const aURL: string = 'auth/users/login'
+const aURL: string = 'template/auth/users/login'
 export interface Response {
     data: string
     loadingFilter: boolean
@@ -19,7 +19,7 @@ export const useUserStore = defineStore('useUserStore', {
         async requestContact(
             primary: string,
             password: string,
-            language_id: number
+           language_id: number,
         ) {
             this.loading = true
             try {

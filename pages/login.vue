@@ -1,7 +1,7 @@
 <template>
   <div>
-    <label for="mail">primary：</label>
-    <input id="primary" type="text" placeholder="請輸入帳號" name="primary" v-model="primary">
+    <label for="mail">email：</label>
+    <input id="email" type="text" placeholder="請輸入帳號" name="email" v-model="email">
     <br>
     <label for="phone">password：</label>
     <input id="phone" type="text" placeholder="請輸入密碼" name="phone" v-model="phone">
@@ -17,7 +17,7 @@
 import {storeToRefs} from "pinia"
 import {useUserStore} from "~/stores/userStore"
 
-const primary = ref("tasb00429+2@gmail.com")
+const email = ref("tasb00429+2@gmail.com")
 const phone = ref("tasb00429+2")
 const store = useUserStore()
 const {getData} = storeToRefs(store)
@@ -25,13 +25,13 @@ const {getData} = storeToRefs(store)
 function submitLogin(e) {
   const {requestContact} = useUserStore()
   // requestContact(
-  //     primary.value,
+  //     email.value,
   //     phone.value,
   //     1
   // )
 
   const userInfo =  requestContact(
-      primary.value,
+      email.value,
       phone.value,
       1
   )
