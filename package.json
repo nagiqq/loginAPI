@@ -14,7 +14,6 @@
     "@nuxtjs/composition-api": "^0.33.1",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "@pinia/nuxt": "^0.4.7",
-    "cookie-parser": "^1.4.6",
     "google-auth-library": "^8.7.0",
     "jsonwebtoken": "^9.0.0",
     "nuxt-icon": "^0.3.2",

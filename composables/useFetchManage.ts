@@ -17,7 +17,9 @@ export const apiManager = async (
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
             "Content-Type": "application/json",
             "Content-Language": "1",
-            "Time-Zone": "Asia/Taipei",
+            // TODO: 這邊的字串會變
+            "X-Secret": "eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY3Nzk5MDU0NiwiaWF0IjoxNjc3OTkwNTQ2fQ",
+            // "Time-Zone": "Asia/Taipei",
         },
         async onRequest({ request, options }) {
             // Log request

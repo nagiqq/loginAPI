@@ -18,8 +18,8 @@
 import {storeToRefs} from "pinia"
 import {useUserStore} from "~/stores/userStore"
 
-const email = ref("tasb00429+2@gmail.com")
-const password = ref("tasb00429+2")
+const email = ref("tasb00429@gmail.com")
+const password = ref("tasb00429")
 const store = useUserStore()
 const {getData} = storeToRefs(store)
 
