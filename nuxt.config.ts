@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         apiSecret: "",
         // Keys within public are also exposed client-side
         public: {
-            apiBase: "https://admin.newoil.com.tw/api/v1/",
+            apiBase: "https://52myartapi.warmy-tracker.com/api/v1/members/",
         },
     }
 })

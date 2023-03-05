@@ -4,11 +4,12 @@
     <input id="email" type="text" placeholder="請輸入帳號" name="email" v-model="email">
     <br>
     <label for="phone">password：</label>
-    <input id="phone" type="text" placeholder="請輸入密碼" name="phone" v-model="phone">
+    <input id="password" type="text" placeholder="請輸入密碼" name="password" v-model="password">
     <br>
     <button type="submit" class="blog_more mt10" @click="submitLogin">
       提交表單
     </button>
+
     <h1 v-if="getData">{{ getData }}</h1>
   </div>
 </template>
@@ -18,7 +19,7 @@ import {storeToRefs} from "pinia"
 import {useUserStore} from "~/stores/userStore"
 
 const email = ref("tasb00429+2@gmail.com")
-const phone = ref("tasb00429+2")
+const password = ref("tasb00429+2")
 const store = useUserStore()
 const {getData} = storeToRefs(store)
 
@@ -32,8 +33,7 @@ function submitLogin(e) {
 
   const userInfo =  requestContact(
       email.value,
-      phone.value,
-      1
+      password.value
   )
       .then((response) => response.data)
       .catch(() => null)
